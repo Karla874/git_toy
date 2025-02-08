@@ -8,7 +8,8 @@ body {
 }
 
 .squad_container {
-  width: 160px;
+  width: 75%;
+  height: 80%;
   display: inline-flex;
   flex-wrap: wrap;
   outline: 1px solid purple;
@@ -21,9 +22,10 @@ body {
 
 .squares {
 	cursor: crosshair;
-	width: 10px;
-	height: 10px;
+	width: calc(100% / 16);
+	height: calc(100% / 16);
 	background: white;
+	opacity: 0.1;
 	transition: 0.5s;
 }
 

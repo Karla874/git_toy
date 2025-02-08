@@ -25,11 +25,22 @@ for (x=0; x<256; x++) {
 
 let selectorSquare = document.querySelectorAll(".squares");
 
+//Cambiar opacidad
+const ajustarOpacidad = function(grado) {
+	let opActual = grado.style.opacity;
+	if (opActual == "") {
+		grado.style.opacity = 0.1;
+	} else if (opActual < 1) {
+		grado.style.opacity = parseFloat(opActual) + 0.1;
+	}
+}
+
 //Cambiar color
 let cambiarColor = function() {
 	selectorSquare.forEach((coloreado) => {
 		coloreado.addEventListener("mouseover", event => {
 			coloreado.style.backgroundColor = RGBcolor();
+			ajustarOpacidad(coloreado);
 		})
 	});
 }
@@ -55,14 +66,11 @@ botton.addEventListener("click", event => {
 		}
 		
 		selectorSquare = document.querySelectorAll(".squares");
-		container.style.width = valor*10+"px";
-		if (valor > 50) {
-			container.style.width = valor*5+"px";
-			selectorSquare.forEach((ajustar) => {
-				ajustar.style.width = "5px";
-				ajustar.style.height = "5px";
-			});			
-		}
+		
+		selectorSquare.forEach((ajustar) => {
+			ajustar.style.width = "calc(100% / "+valor+")";
+			ajustar.style.height = "calc(100% / "+valor+")";
+		});
 		
 		cambiarColor();
 	} else {
