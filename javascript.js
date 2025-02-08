@@ -25,6 +25,15 @@ for (x=0; x<256; x++) {
 
 let selectorSquare = document.querySelectorAll(".squares");
 
+//Limpiar
+limpiar.addEventListener("click", event => {
+	selectorSquare.forEach((limpiado) => {
+		limpiado.style.opacity = 0.1;
+		limpiado.style.backgroundColor = "white";
+		
+	});
+});
+
 //Cambiar opacidad
 const ajustarOpacidad = function(grado) {
 	let opActual = grado.style.opacity;
@@ -45,13 +54,6 @@ let cambiarColor = function() {
 	});
 }
 cambiarColor();
-
-//Limpiar
-limpiar.addEventListener("click", event => {
-	selectorSquare.forEach((limpiado) => {
-		limpiado.style.backgroundColor = "white";
-	});
-});
 
 //Cambiar tamaño
 botton.addEventListener("click", event => {
