@@ -1,0 +1,51 @@
+* { margin: 0; font-family: calibri; }
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.squad_container {
+  width: 160px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  outline: 1px solid purple;
+  justify-content: center;
+}
+
+.squad_container div {
+  /*flex: 0 0 calc(100% /16);*/
+}
+
+.squares {
+	cursor: crosshair;
+	width: 10px;
+	height: 10px;
+	background: white;
+	transition: 0.5s;
+}
+
+.usuario {
+	margin-bottom: 3%;
+}
+
+.usuario button {
+  background: white;
+  color: purple;
+  padding: 5px 20px;
+  border: 2px solid purple;
+  border-radius: 5px;
+  cursor: pointer;
+  font-variant: small-caps;
+  transition: 0.5s;
+}
+
+.usuario button:hover {
+  background: purple;
+  color: white;
+  transition: 0.5s;
+}
+
+.campo { width: 30px; margin-left: 5px; }
